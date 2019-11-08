@@ -1,2 +1,3 @@
-# scl-systems-site
-SCL Systems Site
+# SCL Systems Site
+
+SCL Systems Static Site
