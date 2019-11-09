@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.12
+  build:
+    commands:
+      - echo "Building Frontend App"
+      - echo $CODEBUILD_BUILD_ID > src/version
+  post_build:
+    commands:
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
+artifacts:
+  files:
+    - '**/*'
+  base-directory: src
