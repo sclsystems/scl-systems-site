@@ -1,3 +1,0 @@
-[submodule ".cicd/static-site-infrastructure"]
-	path = .cicd/static-site-infrastructure
-	url = git@github.com:sclsystems/static-site-infrastructure.git
