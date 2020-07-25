@@ -29,3 +29,5 @@ Temporary Items
 
 .cicd/static-site-infrastructure/terraform.auto.tfvars
 .idea
+
+.terraform
