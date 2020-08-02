@@ -1,0 +1,76 @@
+baseURL = "https://scl.systems"
+title = "SCL Systems"
+theme = "twenty-twenty-hugo"
+languageName = "En"
+languageCode = "en-AU"
+paginate = "6"
+summaryLength = "10"
+disqusShortname = ""
+disableLanguages = []
+googleAnalytics = ""
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+author = "author"
+
+[[menu.main]]
+name = "Home"
+URL = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+URL = "about"
+weight = 2
+
+[[menu.main]]
+name = "Contact"
+URL = "contact"
+weight = 3
+
+[[menu.desktop]]
+name = "Contact"
+URL = "contact"
+weight = 1
+
+[params]
+description = "SCL Systems"
+author = "SCL Systems"
+
+[params.banner]
+heading = "A Fresh Approach to Technology Consulting"
+image = "images/hero.png"
+
+[params.call_to_action]
+enable = true
+title = "Contact us for more information."
+button_label = "Contact Us"
+button_url = "contact"
+
+[params.gallery]
+enable = true
+
+  [[params.gallery.gallery_item ]]
+  image = "images/square-dots.png"
+
+  [[params.gallery.gallery_item ]]
+  image = "images/square-stripes.png"
+
+
+[params.footer]
+title = "The SCL Experience"
+content = "Our team of experienced, specialised consultants are focused on using the best technologies to help our clients work smarter, not harder."
+address = "11 York Street <br> Sydney, NSW <br> 2000"
+hours = "Monday–Friday: 9:00AM–5:00PM <br> Saturday: 10:00AM–3:00PM"
+copyright = "Copyright &copy; 2020 SCL Systems Pty Ltd"
+
+[params.social]
+email = "james@scl.systems"
+linkedin = "https://www.linkedin.com/in/jamesmarinoau/"
