@@ -4,14 +4,32 @@ phases:
   install:
     runtime-versions:
       golang: 1.12
+    commands:
+      - echo "Starting Install"
+      - apt-get update
+      - apt-get install wget -y
+      - TEMP_DEB="$(mktemp)"
+      - wget -O "$TEMP_DEB" 'https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb'
+      - dpkg -i "$TEMP_DEB"
+      - echo "Finished Install"
+  pre_build:
+    commands:
+      - echo "Starting Pre Build"
+      - git submodule init
+      - git submodule update
+      - echo "Finished Pre Build"
   build:
     commands:
-      - echo "Building Frontend App"
-      - echo $CODEBUILD_BUILD_ID > src/version
+      - echo "Starting Build"
+      - cd src
+      - hugo -s . -d ../dist
+      - echo "Finished Build"
   post_build:
     commands:
+      - echo "Invalidating Cache"
       - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
+      - echo "Finished Invalidating Cache"
 artifacts:
   files:
     - '**/*'
-  base-directory: src
+  base-directory: dist
