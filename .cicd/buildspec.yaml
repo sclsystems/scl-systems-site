@@ -9,7 +9,7 @@ phases:
       - apt-get update
       - apt-get install wget -y
       - TEMP_DEB="$(mktemp)"
-      - wget -O "$TEMP_DEB" 'https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb'
+      - wget -O "$TEMP_DEB" 'https://github.com/gohugoio/hugo/releases/download/v0.62.2/hugo_0.62.2_Linux-64bit.deb'
       - dpkg -i "$TEMP_DEB"
       - echo "Finished Install"
   pre_build:
