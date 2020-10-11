@@ -51,3 +51,6 @@ terraform.auto.tfvars
 .cicd/static-site-infrastructure/terraform.auto.tfvars
 .terraform
 .idea/
+
+# Hugo
+src/public
